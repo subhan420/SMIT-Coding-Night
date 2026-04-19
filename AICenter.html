@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Center</title>
+    <link rel="stylesheet" href="style4.css" />
+    <style>
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      background-color: #FFFFFF;
+      position: relative;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo-box {
+      width: 40px;
+      height: 40px;
+      background-color: #2aba8a;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: bold;
+      font-size: 18px;
+      border-radius: 8px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      margin-left: 20px;
+      font-size: 16px;
+      color: black;
+    }
+
+    .nav-links a:hover {
+      color: #2aba8a;
+    }
+
+    /* HAMBURGER */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 5px;
+    }
+
+    .hamburger div {
+      width: 25px;
+      height: 3px;
+      background-color: black;
+      border-radius: 2px;
+    }
+
+    /* ================= MOBILE & TABLET ================= */
+    @media (max-width: 1024px) {
+
+      .hamburger {
+        display: flex;
+      }
+
+      .nav-links {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background-color: #FFFFFF;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        display: none;
+        padding: 20px 0;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .nav-links a {
+        margin: 10px 0;
+        font-size: 18px;
+      }
+    }
+
+    </style>
+</head>
+
+<body>
+    <div class="navbar">
+
+        <div class="logo">
+            <div class="logo-box">H</div>
+            <span>HelpHub AI</span>
+        </div>
+
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+
+        <div class="nav-links" id="navLinks">
+            <a href="Explore.html">Explore</a>
+            <a href="CreateRequest.html">Create Request</a>
+            <a href="Leaderboard.html">Leaderboard</a>
+            <a href="AICenter.html">AI Center</a>
+            <a href="Dashboard.html">Dashboard</a>
+            <a href="Messages.html">Messages</a>
+            <a href="Notifications.html">Notifications</a>
+            <a href="Profile.html">Profile</a>
+            <a href="support.html">Support</a>
+            <a href="Requestdetail.html">Request Detail</a>
+        </div>
+
+    </div>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById("navLinks").classList.toggle("active");
+        }
+    </script>
+
+
+
+    <section class="ai-hero">
+        <div class="ai-hero-content">
+            <p class="ai-tag">AI CENTER</p>
+            <h1>See what the platform intelligence is noticing.</h1>
+            <p class="ai-sub">
+                AI-like insights summarize demand trends, helper readiness, urgency
+                signals, and request recommendations.
+            </p>
+        </div>
+    </section>
+
+    <section class="ai-stats">
+        <div class="card">
+            <h3>Web Development</h3>
+            <p>Most common support area based on active community requests.</p>
+        </div>
+
+        <div class="card">
+            <h3>2</h3>
+            <p>Requests currently flagged high priority.</p>
+        </div>
+
+        <div class="card">
+            <h3>2</h3>
+            <p>Trusted helpers with strong response history.</p>
+        </div>
+    </section>
+
+    <section class="ai-requests">
+        <h2>Requests needing attention</h2>
+
+        <div class="request-card">
+            <h4>Need help</h4>
+            <p>Web Development request with high urgency.</p>
+            <span class="badge">High</span>
+        </div>
+
+        <div class="request-card">
+            <h4>Portfolio responsive before demo</h4>
+            <p>CSS grid and media query issue.</p>
+            <span class="badge">High</span>
+        </div>
+
+        <div class="request-card">
+            <h4>Figma feedback</h4>
+            <p>Need design critique and spacing improvements.</p>
+            <span class="badge medium">Medium</span>
+        </div>
+
+        <div class="request-card">
+            <h4>Mock interview help</h4>
+            <p>Frontend interview preparation support.</p>
+            <span class="badge low">Low</span>
+        </div>
+    </section>
+</body>
+
+</html>

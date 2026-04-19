@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - HelpHub AI</title>
+    <link rel="stylesheet" href="style4.css">
+    <style>
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      background-color: #FFFFFF;
+      position: relative;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo-box {
+      width: 40px;
+      height: 40px;
+      background-color: #2aba8a;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: bold;
+      font-size: 18px;
+      border-radius: 8px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      margin-left: 20px;
+      font-size: 16px;
+      color: black;
+    }
+
+    .nav-links a:hover {
+      color: #2aba8a;
+    }
+
+    /* HAMBURGER */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 5px;
+    }
+
+    .hamburger div {
+      width: 25px;
+      height: 3px;
+      background-color: black;
+      border-radius: 2px;
+    }
+
+    /* ================= MOBILE & TABLET ================= */
+    @media (max-width: 1024px) {
+
+      .hamburger {
+        display: flex;
+      }
+
+      .nav-links {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background-color: #FFFFFF;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        display: none;
+        padding: 20px 0;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .nav-links a {
+        margin: 10px 0;
+        font-size: 18px;
+      }
+    }
+
+    /* ================= LARGE SCREENS ================= */
+    @media (min-width: 1440px) {
+      /* No changes (as requested) */
+    }
+    </style>
+</head>
+
+<body>
+
+    <div class="navbar">
+
+        <div class="logo">
+            <div class="logo-box">H</div>
+            <span>HelpHub AI</span>
+        </div>
+
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+
+        <div class="nav-links" id="navLinks">
+            <a href="Explore.html">Explore</a>
+            <a href="CreateRequest.html">Create Request</a>
+            <a href="Leaderboard.html">Leaderboard</a>
+            <a href="AICenter.html">AI Center</a>
+            <a href="Dashboard.html">Dashboard</a>
+            <a href="Messages.html">Messages</a>
+            <a href="Notifications.html">Notifications</a>
+            <a href="Profile.html">Profile</a>
+            <a href="support.html">Support</a>
+            <a href="Requestdetail.html">Request Detail</a>
+        </div>
+
+    </div>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById("navLinks").classList.toggle("active");
+        }
+    </script>
+
+
+    <div class="dashboard-wrapper">
+
+        <div class="dashboard-hero">
+            <small>DASHBOARD</small>
+            <h1>Welcome back, Ayesha Khan.</h1>
+            <p>Your command center for requests, AI insights, helper momentum, and live community activity.</p>
+        </div>
+
+        <div class="dashboard-stats">
+            <div class="stat-box">
+                <span class="stat-label">TRUST SCORE</span>
+                <h3>92%</h3>
+                <p>Driven by solved requests and consistent support.</p>
+            </div>
+            <div class="stat-box">
+                <span class="stat-label">HELPING</span>
+                <h3>2</h3>
+                <p>Requests where you are currently listed as a helper.</p>
+            </div>
+            <div class="stat-box">
+                <span class="stat-label">OPEN REQUESTS</span>
+                <h3>2</h3>
+                <p>Community requests currently active across the feed.</p>
+            </div>
+            <div class="stat-box">
+                <span class="stat-label">AI PULSE</span>
+                <h3>1 trends</h3>
+                <p>Trend count detected in the latest request activity.</p>
+            </div>
+        </div>
+
+        <div class="dashboard-content">
+
+            <div class="recent-requests">
+                <div class="section-header">
+                    <div>
+                        <small>RECENT REQUESTS</small>
+                        <h2>What the community needs right now</h2>
+                    </div>
+                    <button class="btn-round">Go to feed</button>
+                </div>
+
+                <div class="dash-request-list">
+
+                    <div class="dash-req-card">
+                        <div class="top-badges">
+                            <span class="badge-pill outline">Web Development</span>
+                            <span class="badge-pill light-red">High</span>
+                            <span class="badge-pill light-green">Open</span>
+                        </div>
+                        <h4>Need help making my portfolio responsive before demo day</h4>
+                        <p>My HTML/CSS portfolio breaks on tablets and I need layout guidance before tomorrow evening.
+                        </p>
+                        <div class="tags">
+                            <span class="tag">HTML/CSS</span>
+                            <span class="tag">Responsive</span>
+                            <span class="tag">Portfolio</span>
+                        </div>
+                        <div class="card-footer">
+                            <div class="user-info">
+                                <strong>Sara Noor</strong>
+                                <span>Karachi • 1 helper interested</span>
+                            </div>
+                            <button class="btn-outline-small">Open details</button>
+                        </div>
+                    </div>
+
+                    <div class="dash-req-card">
+                        <div class="top-badges">
+                            <span class="badge-pill outline">Design</span>
+                            <span class="badge-pill light-blue">Medium</span>
+                            <span class="badge-pill light-green">Open</span>
+                        </div>
+                        <h4>Looking for Figma feedback on a volunteer event poster</h4>
+                        <p>I have a draft poster for a campus community event and want sharper hierarchy, spacing, and
+                            CTA copy.</p>
+                        <div class="tags">
+                            <span class="tag">Figma</span>
+                            <span class="tag">Poster</span>
+                            <span class="tag">Design Review</span>
+                        </div>
+                        <div class="card-footer">
+                            <div class="user-info">
+                                <strong>Ayesha Khan</strong>
+                                <span>Lahore • 1 helper interested</span>
+                            </div>
+                            <button class="btn-outline-small">Open details</button>
+                        </div>
+                    </div>
+
+                    <div class="dash-req-card">
+                        <div class="top-badges">
+                            <span class="badge-pill outline">Career</span>
+                            <span class="badge-pill light-gray">Low</span>
+                            <span class="badge-pill light-green">Solved</span>
+                        </div>
+                        <h4>Need mock interview support for internship applications</h4>
+                        <p>Applying to frontend internships and need someone to practice behavioral and technical
+                            interview questions with me.</p>
+                        <div class="tags">
+                            <span class="tag">Interview Prep</span>
+                            <span class="tag">Career</span>
+                            <span class="tag">Frontend</span>
+                        </div>
+                        <div class="card-footer">
+                            <div class="user-info">
+                                <strong>Sara Noor</strong>
+                                <span>Remote • 2 helpers interested</span>
+                            </div>
+                            <button class="btn-outline-small">Open details</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="dashboard-sidebar">
+
+                <div class="side-card">
+                    <small class="side-label">AI INSIGHTS</small>
+                    <h3>Suggested actions for you</h3>
+                    <div class="insight-list">
+                        <div class="insight-item">
+                            <span class="key">Most requested category</span>
+                            <span class="value">Web Development</span>
+                        </div>
+                        <div class="insight-item">
+                            <span class="key">Your strongest trust driver</span>
+                            <span class="value">Design Ally</span>
+                        </div>
+                        <div class="insight-item">
+                            <span class="key">AI says you can mentor in</span>
+                            <span class="value">HTML/CSS, UI/UX, Career Guidance, Figma</span>
+                        </div>
+                        <div class="insight-item">
+                            <span class="key">Your active requests</span>
+                            <span class="value">1</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="side-card">
+                    <small class="side-label">NOTIFICATIONS</small>
+                    <h3>Latest updates</h3>
+                    <div class="notification-list">
+
+                        <div class="notification-item">
+                            <div class="notif-text">
+                                <strong>New helper matched to your responsive portfolio request</strong>
+                                <span>Match • 12 min ago</span>
+                            </div>
+                            <span class="notif-badge unread">Unread</span>
+                        </div>
+
+                        <div class="notification-item">
+                            <div class="notif-text">
+                                <strong>Your trust score increased after a solved request</strong>
+                                <span>Reputation • 1 hr ago</span>
+                            </div>
+                            <span class="notif-badge unread">Unread</span>
+                        </div>
+
+                        <div class="notification-item">
+                            <div class="notif-text">
+                                <strong>AI Center detected rising demand for interview prep</strong>
+                                <span>Insight • Today</span>
+                            </div>
+                            <span class="notif-badge read">Read</span>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+</body>
+
+</html>

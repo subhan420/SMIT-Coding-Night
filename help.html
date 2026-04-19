@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style4.css">
+    <title>HelpHub AI</title>
+    <style>
+            .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      background-color: #FFFFFF;
+      position: relative;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo-box {
+      width: 40px;
+      height: 40px;
+      background-color: #2aba8a;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: bold;
+      font-size: 18px;
+      border-radius: 8px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      margin-left: 20px;
+      font-size: 16px;
+      color: black;
+    }
+
+    .nav-links a:hover {
+      color: #2aba8a;
+    }
+
+    /* HAMBURGER */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 5px;
+    }
+
+    .hamburger div {
+      width: 25px;
+      height: 3px;
+      background-color: black;
+      border-radius: 2px;
+    }
+
+    /* ================= MOBILE & TABLET ================= */
+    @media (max-width: 1024px) {
+
+      .hamburger {
+        display: flex;
+      }
+
+      .nav-links {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background-color: #FFFFFF;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        display: none;
+        padding: 20px 0;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .nav-links a {
+        margin: 10px 0;
+        font-size: 18px;
+      }
+    }
+
+    /* ================= LARGE SCREENS ================= */
+    @media (min-width: 1440px) {
+      /* No changes (as requested) */
+    }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <div class="navbar">
+
+        <div class="logo">
+            <div class="logo-box">H</div>
+            <span>HelpHub AI</span>
+        </div>
+
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+
+        <div class="nav-links" id="navLinks">
+            <a href="Explore.html">Explore</a>
+            <a href="CreateRequest.html">Create Request</a>
+            <a href="Leaderboard.html">Leaderboard</a>
+            <a href="AICenter.html">AI Center</a>
+            <a href="Dashboard.html">Dashboard</a>
+            <a href="Messages.html">Messages</a>
+            <a href="Notifications.html">Notifications</a>
+            <a href="Profile.html">Profile</a>
+            <a href="support.html">Support</a>
+            <a href="Requestdetail.html">Request Detail</a>
+        </div>
+
+    </div>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById("navLinks").classList.toggle("active");
+        }
+    </script>
+
+    <!-- HERO -->
+
+    <div class="hero">
+
+        <div class="hero-left">
+
+            <small>SMIT GRAND CODING NIGHT 2026</small>
+
+            <h1>Find help faster.<br>Become help that matters.</h1>
+
+            <p>
+                HelpHub AI is a community-powered support network for students,
+                mentors, creators, and builders.
+            </p>
+
+            <div class="hero-buttons">
+                <a class="primary-btn">Open product demo</a>
+                <a class="secondary-btn">Post a request</a>
+            </div>
+
+            <div class="stats">
+
+                <div class="stat-card">
+                    <h3>384+</h3>
+                    <p>Students, mentors and helpers</p>
+                </div>
+
+                <div class="stat-card">
+                    <h3>72+</h3>
+                    <p>Support posts shared</p>
+                </div>
+
+                <div class="stat-card">
+                    <h3>69+</h3>
+                    <p>Problems solved</p>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="hero-right">
+
+            <div class="circle"></div>
+
+            <h2>More than a form.<br>More like an ecosystem.</h2>
+
+            <p>
+                A polished multi-page experience inspired by product platforms.
+            </p>
+
+            <div class="feature-box">
+                <strong>AI request intelligence</strong>
+                Auto-categorization and smart suggestions.
+            </div>
+
+            <div class="feature-box">
+                <strong>Community trust graph</strong>
+                Badges, rankings and contribution history.
+            </div>
+
+            <div class="feature-box">
+                <strong>100%</strong>
+                Top trust score currently active.
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- CORE FLOW -->
+
+    <div class="section">
+
+        <h2>From struggling alone to solving together</h2>
+
+        <div class="flow">
+
+            <div class="flow-card">
+                <h4>Ask for help clearly</h4>
+                <p>Create structured requests with category and tags.</p>
+            </div>
+
+            <div class="flow-card">
+                <h4>Discover the right people</h4>
+                <p>Use explore feed and notifications.</p>
+            </div>
+
+            <div class="flow-card">
+                <h4>Track real contribution</h4>
+                <p>Trust scores and solved requests.</p>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- COMMUNITY -->
+
+    <div class="section">
+
+        <h2>Community problems currently in motion</h2>
+
+        <div class="community">
+
+            <div class="community-card">
+
+                <span class="tag">Web Development</span>
+                <span class="tag">High</span>
+
+                <h4>Need help</h4>
+
+                <p>help needed</p>
+
+                <br>
+
+                <strong>Ayesha Khan</strong>
+
+                <br>
+
+                <a class="open-btn">Open details</a>
+
+            </div>
+
+
+            <div class="community-card">
+
+                <span class="tag">Web Development</span>
+                <span class="tag">High</span>
+
+                <h4>Need help making my portfolio responsive</h4>
+
+                <p>HTML/CSS portfolio breaks on tablets.</p>
+
+                <br>
+
+                <strong>Sara Noor</strong>
+
+                <br>
+
+                <a class="open-btn">Open details</a>
+
+            </div>
+
+
+            <div class="community-card">
+
+                <span class="tag">Design</span>
+                <span class="tag">Medium</span>
+
+                <h4>Looking for Figma feedback</h4>
+
+                <p>Poster design hierarchy feedback.</p>
+
+                <br>
+
+                <strong>Ayesha Khan</strong>
+
+                <br>
+
+                <a class="open-btn">Open details</a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer">
+        HelpHub AI is built as a premium feel community support product.
+    </div>
+
+</body>
+
+</html>

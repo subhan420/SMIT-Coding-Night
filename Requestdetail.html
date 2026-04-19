@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Inter, Arial, sans-serif;
+
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      background-color: #FFFFFF;
+      position: relative;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo-box {
+      width: 40px;
+      height: 40px;
+      background-color: #2aba8a;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: bold;
+      font-size: 18px;
+      border-radius: 8px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      margin-left: 20px;
+      font-size: 16px;
+      color: black;
+    }
+
+    .nav-links a:hover {
+      color: #2aba8a;
+    }
+
+    /* HAMBURGER */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 5px;
+    }
+
+    .hamburger div {
+      width: 25px;
+      height: 3px;
+      background-color: black;
+      border-radius: 2px;
+    }
+
+    /* ================= MOBILE & TABLET ================= */
+    @media (max-width: 1024px) {
+
+      .hamburger {
+        display: flex;
+      }
+
+      .nav-links {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background-color: #FFFFFF;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        display: none;
+        padding: 20px 0;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .nav-links a {
+        margin: 10px 0;
+        font-size: 18px;
+      }
+    }
+
+    /* ================= LARGE SCREENS ================= */
+    @media (min-width: 1440px) {
+      /* No changes (as requested) */
+    }
+
+    .page {
+      font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #e8ede8 0%, #f0ede6 40%, #f5e8d8 70%, #f0d8c8 100%);
+      min-height: 700px;
+      padding: 32px 40px;
+    }
+
+    .hero {
+      background: #1c2c28;
+      border-radius: 18px;
+      padding: 36px 44px 40px;
+      margin-bottom: 24px;
+    }
+
+    .hero-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.13em;
+      color: #7a9e8e;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    .tags {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 18px;
+    }
+
+    .tag {
+      font-size: 13px;
+      padding: 4px 14px;
+      border-radius: 20px;
+      border: 1px solid #4a6a5a;
+      color: #a0bfb0;
+      background: transparent;
+    }
+
+    .tag.solved {
+      color: #2aba8a;
+      border-color: #2aba8a;
+      background: transparent;
+    }
+
+    .hero h1 {
+      font-size: 46px;
+      font-weight: 900;
+      color: white;
+      line-height: 1.1;
+      margin-bottom: 16px;
+      letter-spacing: -0.5px;
+    }
+
+    .hero p {
+      font-size: 14px;
+      color: #8aada0;
+      line-height: 1.6;
+      max-width: 680px;
+    }
+
+    .columns {
+      display: grid;
+      grid-template-columns: 1fr 380px;
+      gap: 20px;
+    }
+
+    .left-col {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .card {
+      background: #faf9f7;
+      border-radius: 16px;
+      padding: 28px 28px 32px;
+    }
+
+    .card-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.13em;
+      color: #888;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .ai-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .ai-icon {
+      width: 36px;
+      height: 36px;
+      background: #1a7a6a;
+      border-radius: 9px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 700;
+      font-size: 15px;
+      flex-shrink: 0;
+    }
+
+    .ai-name {
+      font-size: 14px;
+      font-weight: 600;
+      color: #222;
+    }
+
+    .ai-text {
+      font-size: 14px;
+      color: #555;
+      line-height: 1.6;
+      margin-bottom: 18px;
+    }
+
+    .chip-list {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .chip {
+      font-size: 13px;
+      color: #333;
+      border: 1px solid #ddd;
+      border-radius: 20px;
+      padding: 5px 14px;
+      background: white;
+    }
+
+    .actions-row {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .btn-primary {
+      background: #1a9a7a;
+      color: white;
+      border: none;
+      border-radius: 50px;
+      padding: 12px 22px;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .btn-text {
+      background: none;
+      border: none;
+      font-size: 15px;
+      font-weight: 600;
+      color: #222;
+      cursor: pointer;
+    }
+
+    .right-col {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .requester-card {
+      background: #faf9f7;
+      border-radius: 16px;
+      padding: 24px 28px;
+    }
+
+    .requester-inner {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-top: 4px;
+    }
+
+    .avatar-blur {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: #c8ddd8;
+      flex-shrink: 0;
+    }
+
+    .requester-links {
+      display: flex;
+      gap: 24px;
+    }
+
+    .requester-links a {
+      text-decoration: none;
+      font-size: 14px;
+      color: #555;
+    }
+
+    .helpers-card {
+      background: #faf9f7;
+      border-radius: 16px;
+      padding: 24px 28px;
+    }
+
+    .helpers-title {
+      font-size: 17px;
+      font-weight: 700;
+      color: #111;
+      margin-bottom: 20px;
+    }
+
+    .helper-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 14px 0;
+      border-top: 1px solid #ede9e3;
+    }
+
+    .helper-item:first-child {
+      border-top: none;
+      padding-top: 0;
+    }
+
+    .avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 13px;
+      color: white;
+      flex-shrink: 0;
+    }
+
+    .av-ak {
+      background: #e07030;
+    }
+
+    .av-ha {
+      background: #e05030;
+    }
+
+    .helper-info {
+      flex: 1;
+    }
+
+    .helper-name {
+      font-size: 15px;
+      font-weight: 700;
+      color: #111;
+      margin-bottom: 3px;
+    }
+
+    .helper-skills {
+      font-size: 13px;
+      color: #777;
+    }
+
+    .trust-badge {
+      background: #f0ede8;
+      border-radius: 10px;
+      padding: 5px 12px;
+      font-size: 13px;
+      font-weight: 600;
+      color: #333;
+      text-align: center;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .helper-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .helper-bottom {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 14px 0;
+      border-top: 1px solid #ede9e3;
+    }
+
+    .helper-bottom-info {
+      flex: 1;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="navbar">
+
+    <div class="logo">
+      <div class="logo-box">H</div>
+      <span>HelpHub AI</span>
+    </div>
+
+    <div class="hamburger" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+
+    <div class="nav-links" id="navLinks">
+      <a href="Explore.html">Explore</a>
+      <a href="CreateRequest.html">Create Request</a>
+      <a href="Leaderboard.html">Leaderboard</a>
+      <a href="AICenter.html">AI Center</a>
+      <a href="Dashboard.html">Dashboard</a>
+      <a href="Messages.html">Messages</a>
+      <a href="Notifications.html">Notifications</a>
+      <a href="Profile.html">Profile</a>
+      <a href="support.html">Support</a>
+      <a href="Requestdetail.html">Request Detail</a>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById("navLinks").classList.toggle("active");
+    }
+  </script>
+
+  <div class="page">
+    <div class="hero">
+      <p class="hero-label">Request Detail</p>
+      <div class="tags">
+        <span class="tag">Career</span>
+        <span class="tag">Low</span>
+        <span class="tag solved">Solved</span>
+      </div>
+      <h1>Need mock interview support for internship applications</h1>
+      <p>Applying to frontend internships and need someone to practice behavioral and technical interview questions with
+        me.</p>
+    </div>
+    <div class="columns">
+      <div class="left-col">
+        <div class="card">
+          <p class="card-label">AI Summary</p>
+          <div class="ai-header">
+            <div class="ai-icon">H</div>
+            <span class="ai-name">HelpHub AI</span>
+          </div>
+          <p class="ai-text">entry-level frontend interviews.</p>
+          <div class="chip-list">
+            <span class="chip">Interview Prep</span>
+            <span class="chip">Career</span>
+            <span class="chip">Frontend</span>
+          </div>
+        </div>
+        <div class="card">
+          <p class="card-label">Actions</p>
+          <div class="actions-row">
+            <button class="btn-primary">I can help</button>
+            <button class="btn-text">Mark as solved</button>
+          </div>
+        </div>
+      </div>
+      <div class="right-col">
+        <div class="requester-card">
+          <p class="card-label">Requester</p>
+          <div class="requester-inner">
+            <div class="avatar-blur"></div>
+            <div class="requester-links">
+              <a href="#">Dashboard</a>
+              <a href="#">Explore</a>
+              <a href="#">Messages</a>
+            </div>
+          </div>
+        </div>
+        <div class="helpers-card">
+          <p class="card-label">Helpers</p>
+          <p class="helpers-title">People ready to support</p>
+          <div class="helper-item">
+            <div class="avatar av-ak">AK</div>
+            <div class="helper-info">
+              <div class="helper-row">
+                <span class="helper-name">Ayesha Khan</span>
+                <span class="trust-badge">Trust 100%</span>
+              </div>
+              <span class="helper-skills">Figma, UI/UX, HTML/CSS</span>
+            </div>
+          </div>
+          <div class="helper-bottom">
+            <div class="avatar av-ha">HA</div>
+            <div style="flex:1;">
+              <div style="display:flex;align-items:flex-start;justify-content:space-between;">
+                <span class="helper-name">Hassan Ali</span>
+                <span class="trust-badge" style="line-height:1.3;">Trust<br>88%</span>
+              </div>
+              <span class="helper-skills">JavaScript, React, Git/GitHub</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

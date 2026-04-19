@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style4.css">
+    <style>
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      background-color: #FFFFFF;
+      position: relative;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo-box {
+      width: 40px;
+      height: 40px;
+      background-color: #2aba8a;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: bold;
+      font-size: 18px;
+      border-radius: 8px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      margin-left: 20px;
+      font-size: 16px;
+      color: black;
+    }
+
+    .nav-links a:hover {
+      color: #2aba8a;
+    }
+
+    /* HAMBURGER */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 5px;
+    }
+
+    .hamburger div {
+      width: 25px;
+      height: 3px;
+      background-color: black;
+      border-radius: 2px;
+    }
+
+    /* ================= MOBILE & TABLET ================= */
+    @media (max-width: 1024px) {
+
+      .hamburger {
+        display: flex;
+      }
+
+      .nav-links {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background-color: #FFFFFF;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        display: none;
+        padding: 20px 0;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .nav-links a {
+        margin: 10px 0;
+        font-size: 18px;
+      }
+    }
+
+    /* ================= LARGE SCREENS ================= */
+    @media (min-width: 1440px) {
+      /* No changes (as requested) */
+    }
+    </style>
+    <title>HelpHub AI</title>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <div class="navbar">
+
+        <div class="logo">
+            <div class="logo-box">H</div>
+            <span>HelpHub AI</span>
+        </div>
+
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+
+        <div class="nav-links" id="navLinks">
+            <a href="Explore.html">Explore</a>
+            <a href="CreateRequest.html">Create Request</a>
+            <a href="Leaderboard.html">Leaderboard</a>
+            <a href="AICenter.html">AI Center</a>
+            <a href="Dashboard.html">Dashboard</a>
+            <a href="Messages.html">Messages</a>
+            <a href="Notifications.html">Notifications</a>
+            <a href="Profile.html">Profile</a>
+            <a href="support.html">Support</a>
+            <a href="Requestdetail.html">Request Detail</a>
+        </div>
+
+    </div>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById("navLinks").classList.toggle("active");
+        }
+    </script>
+
+
+    <!-- MAIN SECTION -->
+
+    <div class="container">
+
+        <!-- LEFT -->
+
+        <div class="left-card">
+
+            <small>COMMUNITY ACCESS</small>
+
+            <h1>Enter the support network.</h1>
+
+            <p>
+                Choose a demo identity, set your role, and jump into a multi-page
+                product flow designed for asking, offering, and tracking help
+                with a premium interface.
+            </p>
+
+            <ul>
+                <li>Role-based entry for Need Help, Can Help, or Both</li>
+                <li>Direct path into dashboard, requests, AI Center, and community feed</li>
+                <li>Persistent demo session powered by LocalStorage</li>
+            </ul>
+
+        </div>
+
+
+        <!-- RIGHT -->
+
+        <div class="right-card">
+
+            <small>LOGIN / SIGNUP</small>
+
+            <h2>Authenticate your community profile</h2>
+
+            <label>Select demo user</label>
+            <select>
+                <option>Ayesha Khan</option>
+                <option>Ali Ahmed</option>
+                <option>John Smith</option>
+            </select>
+
+            <label>Role selection</label>
+            <select>
+                <option>Both</option>
+                <option>Need Help</option>
+                <option>Can Help</option>
+            </select>
+
+            <div class="row">
+
+                <div>
+                    <label>Email</label>
+                    <input type="email" value="community@helphub.ai">
+                </div>
+
+                <div>
+                    <label>Password</label>
+                    <input type="password" value="password">
+                </div>
+
+            </div>
+
+            <button>Continue to dashboard</button>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

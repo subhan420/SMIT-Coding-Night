@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Messages - HelpHub AI</title>
+    <link rel="stylesheet" href="style4.css">
+    <style>
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      background-color: #FFFFFF;
+      position: relative;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo-box {
+      width: 40px;
+      height: 40px;
+      background-color: #2aba8a;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: bold;
+      font-size: 18px;
+      border-radius: 8px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      margin-left: 20px;
+      font-size: 16px;
+      color: black;
+    }
+
+    .nav-links a:hover {
+      color: #2aba8a;
+    }
+
+    /* HAMBURGER */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 5px;
+    }
+
+    .hamburger div {
+      width: 25px;
+      height: 3px;
+      background-color: black;
+      border-radius: 2px;
+    }
+
+    /* ================= MOBILE & TABLET ================= */
+    @media (max-width: 1024px) {
+
+      .hamburger {
+        display: flex;
+      }
+
+      .nav-links {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background-color: #FFFFFF;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        display: none;
+        padding: 20px 0;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .nav-links a {
+        margin: 10px 0;
+        font-size: 18px;
+      }
+    }
+
+    /* ================= LARGE SCREENS ================= */
+    @media (min-width: 1440px) {
+      /* No changes (as requested) */
+    }
+    </style>
+</head>
+
+<body>  
+
+    <div class="navbar">
+
+        <div class="logo">
+            <div class="logo-box">H</div>
+            <span>HelpHub AI</span>
+        </div>
+
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+
+        <div class="nav-links" id="navLinks">
+            <a href="Explore.html">Explore</a>
+            <a href="CreateRequest.html">Create Request</a>
+            <a href="Leaderboard.html">Leaderboard</a>
+            <a href="AICenter.html">AI Center</a>
+            <a href="Dashboard.html">Dashboard</a>
+            <a href="Messages.html">Messages</a>
+            <a href="Notifications.html">Notifications</a>
+            <a href="Profile.html">Profile</a>
+            <a href="support.html">Support</a>
+            <a href="Requestdetail.html">Request Detail</a>
+        </div>
+
+    </div>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById("navLinks").classList.toggle("active");
+        }
+    </script>
+
+    <div class="profile-wrapper">
+        <div class="profile-header-card">
+            <small>INTERACTION / MESSAGING</small>
+            <h1>Keep support moving through direct communication.</h1>
+            <p>Basic messaging gives helpers and requesters a clear follow-up path once a match happens.</p>
+        </div>
+
+        <div class="profile-content">
+
+            <div class="profile-card">
+                <span class="profile-card-label">CONVERSATION STREAM</span>
+                <h2>Recent messages</h2>
+
+                <div class="message-list">
+                    <div class="message-item">
+                        <div class="msg-content">
+                            <strong>Ayesha Khan &rarr; Sara Noor</strong>
+                            <p>I checked your portfolio request. Share the breakpoint screenshots and I can suggest
+                                fixes.</p>
+                        </div>
+                        <div class="msg-time">09:45<br>AM</div>
+                    </div>
+
+                    <div class="message-item">
+                        <div class="msg-content">
+                            <strong>Hassan Ali &rarr; Ayesha Khan</strong>
+                            <p>Your event poster concept is solid. I would tighten the CTA and reduce the background
+                                texture.</p>
+                        </div>
+                        <div class="msg-time">11:10<br>AM</div>
+                    </div>
+
+                    <div class="message-item">
+                        <div class="msg-content">
+                            <strong>Arslan Muhammad Shabbir &rarr; Ayesha Khan</strong>
+                            <p>I've implemented the minimalist landing page design. The modern aesthetics look great on
+                                mobile views.</p>
+                        </div>
+                        <div class="msg-time">02:30<br>PM</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="profile-card">
+                <span class="profile-card-label">SEND MESSAGE</span>
+                <h2>Start a conversation</h2>
+
+                <form action="#">
+                    <div class="form-group">
+                        <label>To</label>
+                        <select class="custom-select">
+                            <option>Ayesha Khan</option>
+                            <option>Sara Noor</option>
+                            <option>Muhammad Ayan</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Message</label>
+                        <textarea class="custom-textarea" rows="4"
+                            placeholder="Share support details, ask for files, or suggest next steps."></textarea>
+                    </div>
+
+                    <button type="submit" class="save-profile-btn">Send</button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+
+</html>
